@@ -1,0 +1,22 @@
+table "publisher" {
+  schema = schema.public
+  column "id" {
+    null = true
+    type = uuid
+  }
+  column "name" {
+    null = true
+    type = character_varying(128)
+  }
+  column "created_at" {
+    null = true
+    type = timestamp
+  }
+  column "updated_at" {
+    null = true
+    type = timestamp
+  }
+}
+schema "public" {
+  comment = "standard public schema"
+}
