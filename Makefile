@@ -1,4 +1,4 @@
-.PHONY: up
+.PHONY: middleware.up
 
-up:
-		docker-compose up -d
+middleware.up:
+	docker-compose up -d
