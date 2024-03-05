@@ -8,4 +8,4 @@ services:
       POSTGRES_PASSWORD: minivr
       POSTGRES_DB: minivr
     ports:
-      - "5433:5433"
+      - "5432:5432"
