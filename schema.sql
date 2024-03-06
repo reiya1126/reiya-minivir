@@ -1,8 +1,6 @@
 CREATE TABLE public.publisher (
     id UUID NULL,
-    name character varying(128) NULL,
-    created_at timestamp NULL,
-    updated_at timestamp NULL
+    name character varying(128),
+    created_at timestamp,
+    updated_at timestamp
 );
-
-COMMENT ON SCHEMA public IS 'standard public schema';
