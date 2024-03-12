@@ -14,8 +14,8 @@ middleware.reset:
 middleware.psql:
 	PGPASSWORD=minivr psql -h localhost -p 5432 -U minivr -d minivr
 
-.PHONY: migrate apply
-apply:
+.PHONY: migrate.apply
+migrate.apply:
 	atlas schema apply \
 		-u "postgresql://minivr:minivr@localhost:5432/minivr?sslmode=disable" \
 		--to file://schema.sql \
