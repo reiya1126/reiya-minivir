@@ -1,6 +1,9 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 CREATE TABLE public.publisher (
-    id UUID NULL,
-    name character varying(128),
-    created_at timestamp,
-    updated_at timestamp
+    id uuid DEFAULT uuid_generate_v4(),
+    name character varying(128) NOT NULL,
+    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY ("id")
 );
