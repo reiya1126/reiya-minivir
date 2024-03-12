@@ -14,16 +14,16 @@ middleware.reset:
 middleware.psql:
 	PGPASSWORD=minivr psql -h localhost -p 5432 -U minivr -d minivr
 
-.PHONY: apply
+.PHONY: migrate apply
 apply:
 	atlas schema apply \
 		-u "postgresql://minivr:minivr@localhost:5432/minivr?sslmode=disable" \
 		--to file://schema.sql \
-		--dev-url "docker://postgres/14/minivr"
+		--dev-url "docker://postgres/15/dev"
 
-.PHONY: migrate.diff
-migrate.diff:
+.PHONY: migrate.plan
+migrate.plan:
 	atlas schema diff \
 		--from "postgresql://minivr:minivr@localhost:5432/minivr?sslmode=disable" \
 		--to "file://schema.sql" \
-		--dev-url "docker://postgres/postgres/14/minivr"
+		--dev-url "docker://postgres/15/dev"
